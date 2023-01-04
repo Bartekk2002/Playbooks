@@ -1,4 +1,4 @@
--Instrukcja jak puszczac plybooki-
+-Instrukcja jak puszczac playbooki-
 
 Example:
 ansible-playbook playbook-copyfile.yml -i inventory.txt
