@@ -1,0 +1,10 @@
+---
+- name: Stop nginx service
+  hosts: all, localhost
+  become: yes
+  tasks:
+  - name: Stop nginx service
+    service:
+      name: httpd
+      state: restarted
+

@@ -1,0 +1,8 @@
+---
+  - hosts: all, localhost
+    become: True
+    tasks:
+      - name: install cowsay
+        yum:
+          name: cowsay
+          state: latest

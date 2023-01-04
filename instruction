@@ -1,0 +1,8 @@
+-Instrukcja jak puszczac plybooki-
+
+Example:
+ansible-playbook playbook-copyfile.yml -i inventory.txt
+ansible-playbook playbook-pingtest.yml -i inventory.txt
+
+Description:
+ansible-playbook [name of playbook] -i(inventory) [podajemy plik z inventory gdzie znajdują się nasze zapisane hosty]

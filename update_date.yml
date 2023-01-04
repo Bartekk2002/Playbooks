@@ -1,0 +1,10 @@
+---
+# This playbook sets the time zone on hosts to GMT+1
+
+- name: Set time zone to GMT+1
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Set the time zone to GMT+1
+      command: timedatectl set-timezone Europe/Warsaw
+

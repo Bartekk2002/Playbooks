@@ -1,0 +1,10 @@
+---
+- name: Shut down hosts
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Shut down the host
+      shutdown: <
+        when: now
+        message: The system is being shut down for maintenance. Please save your work and log off.
+
