@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: no
+  vars:
+    output_file: linux_system_info.csv
+  tasks: 
+    - block: 
+        # For permision setup.
+        - name: get current user
+          command: whoami
+          register: whoami
+          run_once: yes
+
+        - name: Clean file
+          copy:
+            dest: "{{ output_file }}"
+            content: 'hostname, distribution, version'
+            owner: "{{ whoami.stdout }}"
+          run_once: yes
+
+        - name: fill OS information
+          lineinfile:
+            path: "{{ output_file }}"
+            line: "{{ ansible_hostname }},\
+              {{ ansible_distribution }}".\
+              {{ ansible_distribution_version }}"
+          # Tries to prevent concurrent writes.
+          throttle: 1 
+      delegate_to: localhost
