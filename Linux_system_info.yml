@@ -21,9 +21,11 @@
         - name: fill OS information
           lineinfile:
             path: "{{ output_file }}"
-            line: "{{ ansible_hostname }},\
-              {{ ansible_distribution }}".\
-              {{ ansible_distribution_version }}"
+            line: 
+              - "{{ ansible_hostname }}"
+              - "{{ ansible_distribution }}"
+              - "{{ ansible_distribution_version }}"
           # Tries to prevent concurrent writes.
           throttle: 1 
       delegate_to: localhost
+
