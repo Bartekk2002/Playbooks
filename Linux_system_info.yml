@@ -1,6 +1,7 @@
 ---
 - hosts: all
   become: no
+  gather_facts: yes
   vars:
     output_file: linux_system_info.csv
   tasks: 
