@@ -1,9 +1,0 @@
----
-- hosts: all, localhost
-  become: yes
-  tasks:
-    - name: delete /home/osboxes directory
-      file:
-        path: /home/osboxes
-        state: absent
-
