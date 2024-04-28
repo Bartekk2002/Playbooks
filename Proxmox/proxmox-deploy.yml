@@ -9,7 +9,7 @@
   tasks:
     - name: Clone VM
       proxmox_kvm:
-        api_host: 192.168.100.156  # Replace with your Proxmox host IP
+        api_host: 192.168.100.156  #Replace with your Proxmox host IP
         api_user: "{{ proxmox_api_user }}"
         api_password: "{{ proxmox_api_password }}"
         node: "bartek-infrastructure-test"
